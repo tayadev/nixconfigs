@@ -29,7 +29,7 @@
 
         programs.zed-editor = {
           enable = true;
-          extensions = [ "nix" ]
+          extensions = [ "nix" ];
           userSettings = {
             telemetry = {
               metrics = false;
