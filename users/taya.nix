@@ -8,7 +8,6 @@
         home.packages = with pkgs; [
           vesktop
           bitwarden
-          zed-editor
         ];
 
         programs.git = {
@@ -27,6 +26,18 @@
 
         # hyprland
         # TODO: create user config, and find out a way to merge it with a host specific config
+
+        programs.zed-editor = {
+          enable = true;
+          extensions = [ "nix" ]
+          userSettings = {
+            telemetry = {
+              metrics = false;
+              diagnostics = false;
+            };
+            vim_mode = true;
+          };
+        };
 
         home.stateVersion = "24.11";
       };
