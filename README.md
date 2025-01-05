@@ -1,59 +1,65 @@
-# Current State
-
-- Got basic structure to work
-
-- ran into problem where i will want to enable sth both systemwide and in HM, like hyprland, but am unsure how to structure that
-  - maybe i have a seperate system module and a HM module, and you need to include both in the respective places?
+# Previous Readme:
 
 
+Current State
 
-# What do i need where?
+    Got basic structure to work
 
-## CLI
-- git
-- gpg
-- neovim
-- direnv
-- pass?
+    ran into problem where i will want to enable sth both systemwide and in HM, like hyprland, but am unsure how to structure that
+        maybe i have a seperate system module and a HM module, and you need to include both in the respective places?
 
-## Server
-- CLI
-- web server
-- game server
-- file server
-- SPECIAL: might want multiple users
+What do i need where?
+CLI
 
-## Laptop
-- extends CLI
-- WM (hyprland)
-- Application Launcher (wofi)
-- Terminal (kitty)
-- password manager
-- browser
-- fonts
-- email
-- calendar
+    git
+    gpg
+    neovim
+    direnv
+    pass?
 
-## Desktop
-- extends Laptop
-- games (steam, prismlauncher)
-- streamdeck
-- obs
+Server
 
+    CLI
+    web server
+    game server
+    file server
+    SPECIAL: might want multiple users
 
-# Configuration Parts
+Laptop
 
-## Host
-- Disk Configuration, Filesystems
-- Networking, Hostname
-- Hardware Configuration
+    extends CLI
+    WM (hyprland)
+    Application Launcher (wofi)
+    Terminal (kitty)
+    password manager
+    browser
+    fonts
+    email
+    calendar
 
-## System
-- Set up stuff like audio, display server, users etc
+Desktop
 
-## User
-- User specific configuration
+    extends Laptop
+    games (steam, prismlauncher)
+    streamdeck
+    obs
 
-## Programs
-- Program configurations
-    - to be imported (and modified) by a user
+Configuration Parts
+Host
+
+    Disk Configuration, Filesystems
+    Networking, Hostname
+    Hardware Configuration
+
+System
+
+    Set up stuff like audio, display server, users etc
+
+User
+
+    User specific configuration
+
+Programs
+
+    Program configurations
+        to be imported (and modified) by a user
