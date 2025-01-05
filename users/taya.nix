@@ -11,6 +11,7 @@
     packages = with pkgs; [ # separate these by system type, e.g desktop / server
       vesktop
       bitwarden
+      zed-editor
     ];
   };
 
