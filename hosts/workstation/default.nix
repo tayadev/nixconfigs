@@ -6,7 +6,6 @@
     ../../modules/desktop.nix
     ../../modules/hyprland.nix
     ../../users/taya.nix
-    ../../users/demo.nix
   ];
 
   networking.hostName = "workstation";
