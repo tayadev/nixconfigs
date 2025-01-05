@@ -17,6 +17,17 @@
           userEmail = "taya@taya.one";
         };
 
+        # zsh
+        programs.zsh = {
+          enable = true;
+          autosuggestion.enable = true;
+          enableCompletion = true;
+          oh-my-zsh.enable = true;
+        };
+
+        # hyprland
+        # TODO: create user config, and find out a way to merge it with a host specific config
+
         home.stateVersion = "24.11";
       };
     }
