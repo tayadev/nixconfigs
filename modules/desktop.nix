@@ -10,8 +10,16 @@
 
   security.polkit.enable = true;
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+       General = {
+         ControllerMode = "le";
+         Experimental = true;
+       };
+    };
+  };
   services.blueman.enable = true;
 
   xdg.portal.enable = true;
