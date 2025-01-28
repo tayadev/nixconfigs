@@ -15,6 +15,13 @@
           ./hosts/workstation
         ];
       };
+
+      thinkpad = nixpkgs.lib.nixosSystem {
+	specialArgs = { inherit inputs; };
+	modules = [
+	  ./hosts/thinkpad
+	];
+      };
     };
   };
 }
