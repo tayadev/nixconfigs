@@ -57,7 +57,8 @@
          	    kb_layout="ch";
               touchpad = { natural_scroll = true; };
        	    };
-     	    };
+            xwayland = { force_zero_scaling = true; };
+    	  };
        	};
 
         programs.zed-editor = {
