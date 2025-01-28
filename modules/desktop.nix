@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     firefox
+    chromium
   ];
 
   services.displayManager.ly.enable = true;
