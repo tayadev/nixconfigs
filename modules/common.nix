@@ -5,6 +5,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   programs.nh.enable = true;
+  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim

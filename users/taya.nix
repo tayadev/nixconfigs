@@ -27,17 +27,13 @@
         # hyprland
         # TODO: create user config, and find out a way to merge it with a host specific config
 
-        programs.zed-editor = {
-          enable = true;
-          extensions = [ "nix" ];
-          userSettings = {
-            telemetry = {
-              metrics = false;
-              diagnostics = false;
-            };
-            vim_mode = true;
-          };
-        };
+ 	programs.direnv = {
+	  enable = true;
+	  enableZshIntegration = true;
+	  nix-direnv.enable = true;
+	};
+
+	programs.zed-editor.enable = true;
 
         home.stateVersion = "24.11";
       };
