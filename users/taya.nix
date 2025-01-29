@@ -1,16 +1,13 @@
 { inputs, pkgs, ... }: {
 
   imports = [
-    inputs.home-manager.nixosModules.home-manager {
+    inputs.home-manager.nixosModules.home-manager
+    {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.backupFileExtension = ".bakup";
-      home-manager.users.taya = {pkgs, ...}: {
-        home.packages = with pkgs; [
-          vesktop
-          bitwarden
-          nixd
-        ];
+      home-manager.backupFileExtension = ".backup";
+      home-manager.users.taya = { pkgs, ... }: {
+        home.packages = with pkgs; [ vesktop bitwarden nixd ];
 
         programs.git = {
           enable = true;
@@ -28,44 +25,40 @@
 
         # hyprland
         # TODO: create user config, and find out a way to merge it with a host specific config
-       	wayland.windowManager.hyprland = {
-       	  enable = true;
-     	    settings = {
-       	    "$mod" = "SUPER";
-       	    bind =
-     	      [
-          		"$mod, Return, exec, alacritty"
-          		"$mod, Space, exec, wofi --show drun"
+        wayland.windowManager.hyprland = {
+          enable = true;
+          settings = {
+            "$mod" = "SUPER";
+            bind = [
+              "$mod, Return, exec, alacritty"
+              "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
-     	      ] ++ (
+            ] ++ (
               # workspaces
               # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
               builtins.concatLists (builtins.genList (i:
                 let ws = i + 1;
-                  in [
-                    "$mod, code:1${toString i}, workspace, ${toString ws}"
-                    "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-                  ]
-                )
-              9)
-            );
-            bindm = [
-              "$mod, mouse:272, movewindow"
-              "$mod, mouse:273, resizewindow"
-            ];
-       	    input = {
-         	    kb_layout="ch";
+                in [
+                  "$mod, code:1${toString i}, workspace, ${toString ws}"
+                  "$mod SHIFT, code:1${toString i}, movetoworkspace, ${
+                    toString ws
+                  }"
+                ]) 9));
+            bindm =
+              [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+            input = {
+              kb_layout = "ch";
               touchpad = { natural_scroll = true; };
-       	    };
+            };
             xwayland = { force_zero_scaling = true; };
-    	  };
-       	};
+          };
+        };
 
- 	programs.direnv = {
-	  enable = true;
-	  enableZshIntegration = true;
-	  nix-direnv.enable = true;
-	};
+        programs.direnv = {
+          enable = true;
+          enableZshIntegration = true;
+          nix-direnv.enable = true;
+        };
 
         programs.zed-editor = {
           enable = true;

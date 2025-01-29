@@ -7,11 +7,7 @@
   programs.nh.enable = true;
   programs.nix-ld.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-  ];
+  environment.systemPackages = with pkgs; [ vim wget git ];
 
   system.stateVersion = "24.11";
 }

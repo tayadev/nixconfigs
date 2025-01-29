@@ -2,11 +2,7 @@
 
   hardware.graphics.enable = true;
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    fira-code
-    nerd-fonts.fira-code
-  ];
+  fonts.packages = with pkgs; [ noto-fonts fira-code nerd-fonts.fira-code ];
 
   security.polkit.enable = true;
 
@@ -14,21 +10,17 @@
     enable = true;
     powerOnBoot = true;
     settings = {
-       General = {
-         ControllerMode = "le";
-         Experimental = true;
-       };
+      General = {
+        ControllerMode = "le";
+        Experimental = true;
+      };
     };
   };
   services.blueman.enable = true;
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    alacritty
-    firefox
-    chromium
-  ];
+  environment.systemPackages = with pkgs; [ alacritty firefox chromium ];
 
   services.displayManager.ly.enable = true;
 

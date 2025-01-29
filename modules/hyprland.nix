@@ -4,7 +4,5 @@
     xwayland.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    wofi
-  ];
+  environment.systemPackages = with pkgs; [ wofi ];
 }
