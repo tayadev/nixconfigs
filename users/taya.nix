@@ -7,7 +7,7 @@
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = ".backup";
       home-manager.users.taya = { pkgs, ... }: {
-        home.packages = with pkgs; [ vesktop bitwarden nixd ];
+        home.packages = with pkgs; [ vesktop bitwarden nixd swww ];
 
         programs.git = {
           enable = true;
@@ -51,6 +51,14 @@
               touchpad = { natural_scroll = true; };
             };
             xwayland = { force_zero_scaling = true; };
+            exec-once = [
+              "swww-daemon"
+            ];
+            monitor = [
+              "HDMI-A-1, 1920x1080@144, 0x0, 1"
+              "DP-2, 1680x1050@59.95, 1920x0, 1"
+              "DP-1, 1920x1080@60, -1080x-520, 1, transform, 1"
+            ];
           };
         };
 

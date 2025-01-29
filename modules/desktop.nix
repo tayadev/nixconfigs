@@ -20,7 +20,7 @@
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs; [ ghostty firefox chromium ];
+  environment.systemPackages = with pkgs; [ ghostty firefox chromium wl-clipboard ];
 
   services.displayManager.ly.enable = true;
 
