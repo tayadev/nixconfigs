@@ -30,7 +30,7 @@
           settings = {
             "$mod" = "SUPER";
             bind = [
-              "$mod, Return, exec, alacritty"
+              "$mod, Return, exec, ghostty"
               "$mod, Space, exec, wofi --show drun"
               "$mod, W, killactive"
             ] ++ (
@@ -70,6 +70,16 @@
               diagnostics = false;
             };
             vim_mode = true;
+          };
+        };
+
+        programs.ghostty = {
+          enable = true;
+          enableZshIntegration = true;
+          settings = {
+            "gtk-titlebar" = false;
+            "background-opacity" = 0.8;
+            "resize-overlay" = "never";
           };
         };
 

@@ -20,7 +20,7 @@
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs; [ alacritty firefox chromium ];
+  environment.systemPackages = with pkgs; [ ghostty firefox chromium ];
 
   services.displayManager.ly.enable = true;
 
