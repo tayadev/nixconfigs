@@ -10,11 +10,24 @@
 
   security.polkit.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+       General = {
+         ControllerMode = "le";
+         Experimental = true;
+       };
+    };
+  };
+  services.blueman.enable = true;
+
   xdg.portal.enable = true;
 
   environment.systemPackages = with pkgs; [
     alacritty
     firefox
+    chromium
   ];
 
   services.displayManager.ly.enable = true;
